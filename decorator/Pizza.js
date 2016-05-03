@@ -25,7 +25,7 @@ var Pepperoni = pizza => ({
 var price = p => `$${p.getPrice().toFixed(2)}`;
 
 var createPizza = (...ingredients) =>
-    R.pipe.apply(R, [Pizza].concat(ingredients))();
+    R.pipe.apply(R, ingredients)(Pizza());
 
 console.log('-------- Pizza 1 -------------');
 var pizza1 = createPizza(Olives);
@@ -36,6 +36,7 @@ console.log('\n\n--------- Pizza 2 ------------');
 var pizza2 = createPizza(Olives, Pepperoni);
 console.log(pizza2.make());
 console.log(price(pizza2));
+
 
 
 
