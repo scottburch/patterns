@@ -1,27 +1,57 @@
+var $j = jQuery.noConflict();
 var commands = [];
-var workspace = document.querySelector('workspace');
-var undoBtn = document.querySelector('#undo');
-var playBtn = document.querySelector('#play');
-var halfBtn = document.querySelector('#half');
+var header = $j('header');
+var workspace = $j('workspace');
 
 var color = 'red';
 
 var changeColor = c => color = c;
 
 var selectors = document.querySelectorAll('.color-selector');
-Array.prototype.forEach.call(selectors,s => s.addEventListener('click', changeColor.bind(null, s.getAttribute('data-color'))));
+Array.prototype.forEach.call(selectors, s => s.addEventListener('click', changeColor.bind(null, s.getAttribute('data-color'))));
 
-workspace.addEventListener('click', drawBox);
-undoBtn.addEventListener('click', undo);
-playBtn.addEventListener('click', play);
-halfBtn.addEventListener('click', half);
+workspace.click(drawBox);
+
+
+function Selector(c) {
+    var el = $j(`<a href="#" id="${c}" class="color-selector" style="background-color: ${c}; height: 50px; width: 50px; display:inline-block"></a>`);
+    header.append(el);
+    el.click(() => {
+        var prevColor = color;
+        doCommand({
+            exec: () => {
+                color = c;
+                $j('.color-selector').css('border', 'none');
+                el.css('border', '2px solid black')
+            },
+            undo: () => {
+                color = prevColor;
+                $j('.color-selector').css('border', 'none');
+                header.find(`#${prevColor}`).css('border', '2px solid black')
+            }
+        })
+    });
+}
+
+Selector('red');
+Selector('green');
+Selector('blue');
+
+function Btn(text, cmd) {
+    var el = $j(`<a href="#" style="border: 1px solid black; display: inline-block; margin-left: 20px; font-size:34px; padding:7px">${text}</a>`);
+    header.append(el);
+    el.click(cmd);
+}
+
+Btn('Undo', undo);
+Btn('Play', play);
+Btn('Blacken', blacken);
 
 function drawBox(ev) {
-    var html = `${workspace.innerHTML}<div style="background-color:${color};height:30px; width:30px; position:fixed; top:${ev.y-15}; left: ${ev.x-15}"></div>`;
-    var prevHTML = workspace.innerHTML;
+    var box = $j(`<div style="background-color:${color};height:30px; width:30px; position:fixed; top:${ev.pageY - 15}; left: ${ev.pageX - 15}"></div>`);
     doCommand({
-        exec: () => workspace.innerHTML = html,
-        undo: () => workspace.innerHTML = prevHTML
+        exec: () => workspace.append(box),
+        undo: () => box.remove()
     });
 }
 
@@ -31,19 +61,24 @@ function doCommand(cmd) {
 }
 
 function undo() {
-        commands.pop().undo();
+    commands.pop().undo();
 }
 
 function play() {
+    workspace.html('');
     (function loop(cmds) {
         cmds.shift().exec();
         cmds.length && setTimeout(() => loop(cmds), 700);
     }(commands.slice()));
 }
 
-function half() {
-    var len = Math.floor(commands.length / 2);
-    while(len--) {
-        commands.pop().undo();
-    }
+function blacken() {
+    workspace.find('div').each(function () {
+        var origColor = $j(this).css('background-color');
+        doCommand({
+            exec: () => $j(this).css('background-color', 'black'),
+            undo: () => $j(this).css('background-color', origColor)
+        });
+
+    });
 }
