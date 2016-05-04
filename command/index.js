@@ -3,7 +3,7 @@ var commands = [];
 var header = $j('header');
 var workspace = $j('workspace');
 
-var color = 'red';
+var color = 'black';
 
 var changeColor = c => color = c;
 
@@ -19,23 +19,19 @@ function Selector(c) {
     el.click(() => {
         var prevColor = color;
         doCommand({
-            exec: () => {
-                color = c;
-                $j('.color-selector').css('border', 'none');
-                el.css('border', '2px solid black')
-            },
-            undo: () => {
-                color = prevColor;
-                $j('.color-selector').css('border', 'none');
-                header.find(`#${prevColor}`).css('border', '2px solid black')
-            }
+            exec: () => selectColor(c),
+            undo: () => selectColor(prevColor)
         })
     });
+
+    function selectColor(c) {
+        color = c;
+        header.find('.color-selector').css('border', 'none');
+        header.find(`#${c}`).css('border', '2px solid black');
+    }
 }
 
-Selector('red');
-Selector('green');
-Selector('blue');
+['red','green','blue'].forEach(Selector);
 
 function Btn(text, cmd) {
     var el = $j(`<a href="#" style="border: 1px solid black; display: inline-block; margin-left: 20px; font-size:34px; padding:7px">${text}</a>`);
