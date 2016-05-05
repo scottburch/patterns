@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09b6c20a-3fa5-436d-a641-94a4592adb7e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/command/index.html" afterPath="$PROJECT_DIR$/command/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/command/index.js" afterPath="$PROJECT_DIR$/command/index.js" />
     </list>
     <ignored path="patterns.iws" />
@@ -28,13 +30,13 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/command/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="31">
+              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
               <folding>
-                <marker date="1462331222000" expanded="true" signature="479:550" placeholder="..." />
-                <marker date="1462331222000" expanded="true" signature="1050:1144" placeholder="..." />
-                <marker date="1462331222000" expanded="true" signature="1323:1418" placeholder="..." />
-                <marker date="1462331222000" expanded="true" signature="1543:1617" placeholder="..." />
+                <marker date="1462331497000" expanded="true" signature="252:323" placeholder="..." />
+                <marker date="1462331497000" expanded="true" signature="823:917" placeholder="..." />
+                <marker date="1462331497000" expanded="true" signature="1096:1191" placeholder="..." />
+                <marker date="1462331497000" expanded="true" signature="1316:1322" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -43,11 +45,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/command/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#workspace#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +95,8 @@
         <option value="$PROJECT_DIR$/command/package.json" />
         <option value="$PROJECT_DIR$/command/webpack.config.js" />
         <option value="$PROJECT_DIR$/command/src/index.js" />
-        <option value="$PROJECT_DIR$/command/index.html" />
         <option value="$PROJECT_DIR$/command/index.js" />
+        <option value="$PROJECT_DIR$/command/index.html" />
       </list>
     </option>
   </component>
@@ -683,12 +683,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1462141944704</updated>
-      <workItem from="1462141948350" duration="25713000" />
+      <workItem from="1462141948350" duration="28616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25713000" />
+    <option name="totallyTimeSpent" value="28616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="24" width="1179" height="726" extended-state="0" />
@@ -912,23 +912,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/command/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#workspace#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/command/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="31">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
           <folding>
-            <marker date="1462331222000" expanded="true" signature="479:550" placeholder="..." />
-            <marker date="1462331222000" expanded="true" signature="1050:1144" placeholder="..." />
-            <marker date="1462331222000" expanded="true" signature="1323:1418" placeholder="..." />
-            <marker date="1462331222000" expanded="true" signature="1543:1617" placeholder="..." />
+            <marker date="1462331497000" expanded="true" signature="252:323" placeholder="..." />
+            <marker date="1462331497000" expanded="true" signature="823:917" placeholder="..." />
+            <marker date="1462331497000" expanded="true" signature="1096:1191" placeholder="..." />
+            <marker date="1462331497000" expanded="true" signature="1316:1322" placeholder="..." />
           </folding>
         </state>
       </provider>

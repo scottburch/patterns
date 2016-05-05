@@ -5,11 +5,6 @@ var workspace = $j('workspace');
 
 var color = 'black';
 
-var changeColor = c => color = c;
-
-var selectors = document.querySelectorAll('.color-selector');
-Array.prototype.forEach.call(selectors, s => s.addEventListener('click', changeColor.bind(null, s.getAttribute('data-color'))));
-
 workspace.click(drawBox);
 
 
